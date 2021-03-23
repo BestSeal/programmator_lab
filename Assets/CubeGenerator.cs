@@ -114,6 +114,9 @@ public class CubeGenerator : MonoBehaviour
                     for (int z = z0; z <= dz; ++z)
                     {
                         GameObject.Find(x.ToString() + y.ToString() + z.ToString()).SetActive(false);
+                        GameObject.Find("coordX").GetComponent<Text>().text = x.ToString();
+                        GameObject.Find("coordY").GetComponent<Text>().text = y.ToString();
+                        GameObject.Find("coordZ").GetComponent<Text>().text = z.ToString();
                         blade.transform.position = new Vector3(x, y + 1, z);
                         yield return new WaitForSeconds(delay);
                     }
